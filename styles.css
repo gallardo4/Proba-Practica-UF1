@@ -1,0 +1,418 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: #333333;
+    background-color: #fef6e4;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+header {
+    background: linear-gradient(135deg, #ff6f61, #f8b400);
+    padding: 1.5rem 0;
+    color: #ffffff;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+.logo {
+    max-height: 60px;
+    transition: transform 0.3s;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-list a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    position: relative;
+    padding: 0.5rem 0;
+    transition: color 0.3s;
+}
+
+.nav-list a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #f8b400;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.3s ease-in-out;
+}
+
+.nav-list a:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-list a:hover {
+    color: #f8b400;
+}
+
+.hamburger {
+    display: none;
+    font-size: 2.5rem;
+    background: none;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.banner {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('festival-placeholder.jpg') center/cover no-repeat;
+    color: #ffffff;
+    text-align: center;
+    padding: 8rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.banner h1 {
+    font-size: 3.5rem;
+    background: linear-gradient(135deg, #ff6f61, #f8b400);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 1rem;
+}
+
+.banner p {
+    font-size: 1.5rem;
+    max-width: 800px;
+}
+
+.info-festival {
+    padding: 4rem 2rem;
+    background: linear-gradient(135deg, #ff6f61, #f8b400);
+    color: #ffffff;
+    margin: 2rem 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    text-align: center;
+}
+
+.info-festival ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+}
+
+.info-festival ul li {
+    margin: 0.5rem 0;
+    font-size: 1.1rem;
+}
+
+.info-festival img {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 1.5rem auto;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-festival img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+
+.artistes-destacats {
+    margin: 2rem;
+}
+
+.galeria-artistes {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.galeria-artistes img {
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-festival-images {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.info-festival-images img {
+    width: 400px;
+    height: 300px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (min-width: 1200px) {
+    .galeria-artistes {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .info-festival-images {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+    .galeria-artistes {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .info-festival-images {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 767px) {
+    body {
+        min-width: 650px;
+    }
+
+    .galeria-artistes {
+        grid-template-columns: 1fr;
+    }
+}
+
+.galeria-artistes img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.galeria-artistes img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.info-festival-images img {
+    width: 100%;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.info-festival-images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.media-section {
+    padding: 4rem 2rem;
+    background-color: #fef6e4;
+}
+
+video {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.contact-form {
+    background-color: #2d3e50;
+    color: #ffffff;
+    padding: 3rem 2rem;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    max-width: 1000px;
+    margin: auto;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.contact-form:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+}
+
+.contact-form h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #f8b400;
+}
+
+.contact-form label {
+    display: block;
+    margin: 1rem 0 0.5rem;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #ffffff;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+    border: 1px solid #cccccc;
+    border-radius: 6px;
+    background-color: #3b4a60;
+    color: #ffffff;
+    font-size: 1rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.contact-form input:focus, .contact-form textarea:focus {
+    border-color: #ff6f61;
+    box-shadow: inset 0 2px 10px rgba(255, 111, 97, 0.2);
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: vertical;
+    min-height: 150px;
+}
+
+.contact-form button {
+    background-color: #ff6f61;
+    color: #ffffff;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    width: 100%;
+    margin-top: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form button:hover {
+    background-color: #ff9a8b;
+    transform: translateY(-3px);
+}
+
+.contact-form button:active {
+    transform: translateY(1px);
+}
+
+footer {
+    background-color: #2d3e50;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 3rem 2rem;
+    margin-top: 2rem;
+    box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.1);
+    font-size: 1rem;
+}
+
+footer .footer-content {
+    max-width: 1200px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+footer .footer-section {
+    flex: 1;
+    min-width: 200px;
+    text-align: left;
+}
+
+footer .footer-section img {
+    max-width: 200px;
+    margin-bottom: 1rem;
+    transition: transform 0.3s ease;
+}
+
+footer .footer-section img:hover {
+    transform: scale(1.1);
+}
+
+footer a {
+    color: #f8b400;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: #ff6f61;
+}
+
+footer .social-icons {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+footer .social-icons img {
+    padding: 0.6rem;
+    border-radius: 50%;
+    display: inline-block;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    width: 60px;
+    height: 60px;
+}
+
+footer .social-icons img:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+footer p {
+    margin-top: 2rem;
+    font-size: 0.9rem;
+    color: #b0b0b0;
+}
+
+@media (max-width: 767px) {
+    .header-container {
+        flex-direction: column;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .nav-list {
+        display: none;
+        flex-direction: column;
+        background: #2d3e50;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+    }
+
+    .nav-list.active {
+        display: flex;
+    }
+}
